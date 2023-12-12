@@ -17,6 +17,10 @@ section {
     margin: 20px;
 }
 
+h1 {
+    color: black;
+}
+
 h2, h3 {
     color: #007BFF;
 }
