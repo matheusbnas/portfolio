@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
+    output: 'export',
     images: {
-      domains: ['github-readme-stats-git-masterrstaa-rickstaa.vercel.app'],
+      unoptimized: true,
     },
   }
   
