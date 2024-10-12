@@ -1,9 +1,5 @@
-import dynamic from 'next/dynamic';
-
-const DynamicPortfolio = dynamic(() => import('../components/Portfolio'), {
-  ssr: false,
-});
+import Layout from '../components/Layout';
 
 export default function Home() {
-  return <DynamicPortfolio />;
+  return <Layout />;
 }
