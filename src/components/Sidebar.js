@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Mail, Phone, Calendar, MapPin, Linkedin, ChevronDown, ChevronUp } from 'lucide-react';
+import { Mail, Phone, Calendar, MapPin, Linkedin, ChevronDown, ChevronUp, Github } from 'lucide-react';
 
 export default function Sidebar() {
   const [showContacts, setShowContacts] = useState(false);
@@ -33,7 +33,7 @@ export default function Sidebar() {
               </div>
               <div className="contact-info">
                 <p className="contact-title">Email</p>
-                <a href="mailto:matheusbnas@gmail.com" className="contact-link">matheusbnas@gmail.com</a>
+                <a href="mailto:matheusbnas@gmail.com"  target="_blank" className="contact-link">matheusbnas@gmail.com</a>
               </div>
             </li>
             <li className="contact-item">
@@ -42,7 +42,7 @@ export default function Sidebar() {
               </div>
               <div className="contact-info">
                 <p className="contact-title">Phone</p>
-                <a href="https://api.whatsapp.com/send?phone=5521999999999" className="contact-link">+55 21 99999-9999</a>
+                <a href="https://api.whatsapp.com/send?phone=5521994288152" target="_blank" className="contact-link">+55 21 99428-8152</a>
               </div>
             </li>
             <li className="contact-item">
@@ -51,7 +51,7 @@ export default function Sidebar() {
               </div>
               <div className="contact-info">
                 <p className="contact-title">Birthday</p>
-                <time dateTime="1990-01-01">January 01, 1990</time>
+                <time dateTime="1990-01-01">September 19, 1994</time>
               </div>
             </li>
             <li className="contact-item">
@@ -67,11 +67,20 @@ export default function Sidebar() {
           <div className="separator"></div>
           <ul className="social-list">
             <li className="social-item">
-              <a href="https://www.linkedin.com/in/matheus-nascimento-b06b639b" className="social-link">
+              <a href="https://www.linkedin.com/in/matheus-nascimento-b06b639b" target="_blank" rel="noopener noreferrer" className="social-link">
                 <Linkedin />
               </a>
             </li>
-            {/* Add more social media links as needed */}
+            <li className="social-item">
+              <a href="https://github.com/matheusbnas" target="_blank" rel="noopener noreferrer" className="social-link">
+                <Github />
+              </a>
+            </li>
+            <li className="social-item">
+              <a href="mailto:matheusbnas@gmail.com" className="social-link">
+                <Mail />
+              </a>
+            </li>
           </ul>
         </div>
       )}

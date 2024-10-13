@@ -46,7 +46,7 @@ export default function Contact({ language }) {
               </a>
             </li>
             <li className="social-item">
-              <a href="mailto:matheusbnas@gmail.com" className="social-link flex items-center space-x-3">
+              <a href="mailto:matheusbnas@gmail.com"  target="_blank" className="social-link flex items-center space-x-3">
                 <Mail className="w-6 h-6 text-blue-400" />
                 <span className="text-gray-300 hover:text-blue-400">Email</span>
               </a>
