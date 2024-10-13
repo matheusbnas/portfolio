@@ -2,21 +2,33 @@
 
 import { Mail, Linkedin, Github } from 'lucide-react';
 
-export default function Contact() {
+export default function Contact({ language }) {
+  const content = {
+    pt: {
+      title: "Contato",
+      subtitle: "🔗 Vamos nos conectar!",
+      description: "Sinta-se à vontade para entrar em contato comigo para colaborações potenciais, discussões de projetos ou ofertas. Será um prazer ouvir de você e me envolver em conversas frutíferas que possam levar a parcerias mutuamente benéficas.",
+    },
+    en: {
+      title: "Contact",
+      subtitle: "🔗 Let's Connect!",
+      description: "Feel free to reach out to me for potential collaborations, project discussions, or offers. It will be a pleasure to hear from you and engage in fruitful conversations that could lead to mutually beneficial partnerships.",
+    }
+  };
+
+  const text = content[language];
+
   return (
     <article className="contact active" data-page="contact">
       <header>
-        <h2 className="h2 article-title">Contato</h2>
+        <h2 className="h2 article-title">{text.title}</h2>
       </header>
 
       <section className="contact-form">
-        <h3 className="h3 form-title">🔗 Vamos nos conectar!</h3>
+        <h3 className="h3 form-title">{text.subtitle}</h3>
 
         <section className="about-text">
-          <p>
-            Sinta-se à vontade para entrar em contato comigo para colaborações potenciais, discussões de projetos ou ofertas.
-            Será um prazer ouvir de você e me envolver em conversas frutíferas que possam levar a parcerias mutuamente benéficas.
-          </p>
+          <p>{text.description}</p>
         </section>
 
         <section className="about-text">
