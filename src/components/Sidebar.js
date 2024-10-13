@@ -1,57 +1,80 @@
 "use client";
 
+import { useState } from 'react';
 import Image from 'next/image';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Mail, Phone, Calendar, MapPin, Linkedin, ChevronDown, ChevronUp } from 'lucide-react';
 
-export default function Sidebar({ setActiveSection, activeSection }) {
-  const menuItems = [
-    { id: 'about', label: 'About' },
-    { id: 'resume', label: 'Resume' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' },
-  ];
+export default function Sidebar() {
+  const [showContacts, setShowContacts] = useState(false);
 
   return (
-    <aside className="w-64 bg-gray-800 p-6 fixed h-screen overflow-auto">
-      <div className="text-center">
-        <Image
-          src="/images/foto_perfil.jpg"
-          alt="Matheus Bernardes"
-          width={120}
-          height={120}
-          className="rounded-full mx-auto mb-4"
-        />
-        <h1 className="text-2xl font-bold text-white">Matheus Bernardes</h1>
-        <p className="text-gray-400">Cientista de Dados</p>
+    <aside className="sidebar" data-sidebar="">
+      <div className="sidebar-info">
+        <figure className="avatar-box">
+          <Image src="/images/foto_perfil.jpg" alt="Matheus Bernardes" width={80} height={80} />
+        </figure>
+        <div className="info-content">
+          <h1 className="name" title="Matheus Bernardes">Matheus Bernardes</h1>
+          <p className="title">Data Science | Machine Learning</p>
+        </div>
+        <button className="info_more-btn" onClick={() => setShowContacts(!showContacts)}>
+          <span>{showContacts ? 'Hide Contacts' : 'Show Contacts'}</span>
+          {showContacts ? <ChevronUp /> : <ChevronDown />}
+        </button>
       </div>
-      <nav className="mt-8">
-        <ul className="space-y-2">
-          {menuItems.map((item) => (
-            <li key={item.id}>
-              <button
-                onClick={() => setActiveSection(item.id)}
-                className={`w-full text-left py-2 px-4 rounded transition-colors duration-200 ${
-                  activeSection === item.id ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-gray-700'
-                }`}
-              >
-                {item.label}
-              </button>
+      
+      {showContacts && (
+        <div className="sidebar-info_more">
+          <div className="separator"></div>
+          <ul className="contacts-list">
+            <li className="contact-item">
+              <div className="icon-box">
+                <Mail />
+              </div>
+              <div className="contact-info">
+                <p className="contact-title">Email</p>
+                <a href="mailto:matheusbnas@gmail.com" className="contact-link">matheusbnas@gmail.com</a>
+              </div>
             </li>
-          ))}
-        </ul>
-      </nav>
-      <div className="mt-8 flex justify-center space-x-4">
-        <a href="https://github.com/matheusbnas" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
-          <Github className="w-6 h-6" />
-        </a>
-        <a href="https://www.linkedin.com/in/matheus-nascimento-b06b639b" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
-          <Linkedin className="w-6 h-6" />
-        </a>
-        <a href="mailto:matheusbnas@gmail.com" className="text-gray-400 hover:text-white">
-          <Mail className="w-6 h-6" />
-        </a>
-      </div>
+            <li className="contact-item">
+              <div className="icon-box">
+                <Phone />
+              </div>
+              <div className="contact-info">
+                <p className="contact-title">Phone</p>
+                <a href="https://api.whatsapp.com/send?phone=5521999999999" className="contact-link">+55 21 99999-9999</a>
+              </div>
+            </li>
+            <li className="contact-item">
+              <div className="icon-box">
+                <Calendar />
+              </div>
+              <div className="contact-info">
+                <p className="contact-title">Birthday</p>
+                <time dateTime="1990-01-01">January 01, 1990</time>
+              </div>
+            </li>
+            <li className="contact-item">
+              <div className="icon-box">
+                <MapPin />
+              </div>
+              <div className="contact-info">
+                <p className="contact-title">Location</p>
+                <address>Rio de Janeiro, Brazil</address>
+              </div>
+            </li>
+          </ul>
+          <div className="separator"></div>
+          <ul className="social-list">
+            <li className="social-item">
+              <a href="https://www.linkedin.com/in/matheus-nascimento-b06b639b" className="social-link">
+                <Linkedin />
+              </a>
+            </li>
+            {/* Add more social media links as needed */}
+          </ul>
+        </div>
+      )}
     </aside>
   );
 }

@@ -1,31 +1,237 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-primary: #0000ff;
+  --color-secondary: #808080;
+  --sidebar-width: 290px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-background: #000000;
+    --color-text: #ffffff;
+    --color-primary: #4169e1;
+    --color-secondary: #a0a0a0;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #111827;
-  color: #ffffff;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Sidebar styles */
+.sidebar {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  padding: 20px;
+  border-right: 1px solid var(--color-secondary);
+}
+
+.avatar-box img {
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.info-content .name {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.info-content .title {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+}
+
+.info_more-btn {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.separator {
+  border-top: 1px solid var(--color-secondary);
+  margin: 15px 0;
+}
+
+.contacts-list, .social-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.icon-box {
+  margin-right: 10px;
+}
+
+.contact-title {
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+}
+
+.contact-link, .social-link {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.contact-link:hover, .social-link:hover {
+  color: var(--color-primary);
+}
+
+.social-list {
+  display: flex;
+  justify-content: center;
+}
+
+.social-item {
+  margin: 0 10px;
+}
+
+/* Main content area */
+main {
+  margin-left: var(--sidebar-width);
+  padding: 20px;
+}
+
+/* Portfolio styles */
+.portfolio {
+  padding: 20px;
+}
+
+.article-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--color-primary);
+}
+
+.filter-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.filter-item button {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-item button:hover,
+.filter-item button.active {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+}
+
+.project-item {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+}
+
+.project-img {
+  position: relative;
+}
+
+.project-item-icon-box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 8px;
+  color: var(--color-primary);
+}
+
+.project-title {
+  font-size: 1.2rem;
+  margin: 15px 10px 5px;
+  color: var(--color-text);
+}
+
+.project-category {
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  margin: 0 10px 15px;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
   }
+
+  main {
+    margin-left: 0;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Utility classes */
+.text-balance {
+  text-wrap: balance;
 }
 
 /* Add responsive font sizes */
