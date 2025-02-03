@@ -67,7 +67,7 @@ export default function Sidebar() {
           <div className="separator"></div>
           <ul className="social-list">
             <li className="social-item">
-              <a href="https://www.linkedin.com/in/matheus-nascimento-b06b639b" target="_blank" rel="noopener noreferrer" className="social-link">
+              <a href="https://www.linkedin.com/in/matheusbnas/" target="_blank" rel="noopener noreferrer" className="social-link">
                 <Linkedin />
               </a>
             </li>

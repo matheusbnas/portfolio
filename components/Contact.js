@@ -34,7 +34,7 @@ export default function Contact({ language }) {
         <section className="about-text">
           <ul className="space-y-4">
             <li className="social-item">
-              <a href="https://www.linkedin.com/in/matheus-nascimento-b06b639b" target="_blank" rel="noopener noreferrer" className="social-link flex items-center space-x-3">
+              <a href="https://www.linkedin.com/in/matheusbnas/" target="_blank" rel="noopener noreferrer" className="social-link flex items-center space-x-3">
                 <Linkedin className="w-6 h-6 text-blue-400" />
                 <span className="text-gray-300 hover:text-blue-400">LinkedIn</span>
               </a>
