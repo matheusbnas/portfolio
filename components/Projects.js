@@ -37,7 +37,37 @@ export default function Projects({ language }) {
       category: "business-intelligence",
       isIframe: true,
       iframeSrc: "https://app.powerbi.com/view?r=eyJrIjoiNzAyNjA1MGMtOGFmOC00YjZjLThjZDYtMjQ1OTZjZWUwYzNlIiwidCI6ImIyZTE2Mjk3LTJlZDYtNDFiOC1iODIyLWE5NTRlOTViZDJmMCIsImMiOjR9",
-      link: "#"
+      link: "https://app.powerbi.com/view?r=eyJrIjoiNzAyNjA1MGMtOGFmOC00YjZjLThjZDYtMjQ1OTZjZWUwYzNlIiwidCI6ImIyZTE2Mjk3LTJlZDYtNDFiOC1iODIyLWE5NTRlOTViZDJmMCIsImMiOjR9"
+    },
+    {
+      id: 4,
+      title: {
+        pt: "Classificação de Insetos com Visão Computacional",
+        en: "Insect Classification with Computer Vision"
+      },
+      category: "machine-learning",
+      imageUrl: "/images/insetos.jpg",
+      link: "https://selecao-insetos.vercel.app/"
+    },
+    {
+      id: 5,
+      title: {
+        pt: "Chatbot com OpenAI",
+        en: "OpenAI Chatbot"
+      },
+      category: "artificial-intelligence",
+      imageUrl: "/images/chatbot.jpg",
+      link: "https://chatbot-ai-openai.streamlit.app/"
+    },
+    {
+      id: 6,
+      title: {
+        pt: "App de Análise de Jogadores de FIFA",
+        en: "FIFA Players Analysis App"
+      },
+      category: "data-analysis",
+      imageUrl: "/images/fifa.jpg",
+      link: "https://projetoappfifa.streamlit.app/"
     }
   ];
 
@@ -77,12 +107,28 @@ export default function Projects({ language }) {
               Business Intelligence
             </button>
           </li>
+          <li className="filter-item">
+            <button 
+              className={`px-4 py-2 ${filter === 'artificial-intelligence' ? 'bg-blue-600 text-white' : ''}`} 
+              onClick={() => setFilter('artificial-intelligence')}
+            >
+              Artificial Intelligence
+            </button>
+          </li>
+          <li className="filter-item">
+            <button 
+              className={`px-4 py-2 ${filter === 'data-analysis' ? 'bg-blue-600 text-white' : ''}`} 
+              onClick={() => setFilter('data-analysis')}
+            >
+              Data Analysis
+            </button>
+          </li>
         </ul>
 
         <ul className="project-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
             <li key={project.id} className="project-item rounded-lg overflow-hidden">
-              <a href={project.link} className="block">
+              <a href={project.link} className="block" target="_blank" rel="noopener noreferrer">
                 <figure className="project-img relative">
                   <div className="project-item-icon-box absolute top-2 right-2 bg-black bg-opacity-50 rounded-full p-2">
                     <Eye size={20} className="text-white" />
@@ -102,13 +148,13 @@ export default function Projects({ language }) {
                       alt={project.title[language]}
                       width={500}
                       height={300}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-48 object-contain"
                     />
                   )}
                 </figure>
                 <div className="p-4">
                   <h3 className="project-title text-lg font-semibold mb-2">{project.title[language]}</h3>
-                  <p className="project-category text-sm">{project.category}</p>
+                  <p className="project-category text-sm">{project.category.replace('-', ' ')}</p>
                 </div>
               </a>
             </li>

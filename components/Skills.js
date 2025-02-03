@@ -7,33 +7,41 @@ export default function Skills({ language }) {
       programmingLanguages: {
         title: "Linguagens de Programação e Banco de Dados",
         skills: [
-          "Python com foco em análise de dados",
-          "Web scraping com Python",
-          "SQL para extração de dados",
-          "Banco de Dados: SQLite, PostgreSQL e MySQL"
+          "Python com foco em análise de dados e Machine Learning",
+          "Javascript e Angular para desenvolvimento web",
+          "SQL para análise e manipulação de dados",
+          "Bancos de Dados: MongoDB, MySQL, PostgreSQL, SQLite",
+          "APIs REST com Flask e integração de serviços"
         ]
       },
-      statistics: {
-        title: "Estatística e Machine Learning",
+      artificialIntelligence: {
+        title: "Inteligência Artificial e Machine Learning",
         skills: [
-          "Estatística descritiva",
-          "Algoritmos de Regressão, Classificação e Agrupamento",
-          "Pacotes de Machine Learning: Sklearn e Tensorflow"
+          "Deep Learning com TensorFlow e autoencoders",
+          "IA Generativa e modelos avançados",
+          "NLP com NLTK e spaCy para análise de sentimentos",
+          "Clustering e técnicas de segmentação",
+          "Modelagem preditiva e classificação"
         ]
       },
       dataVisualization: {
-        title: "Visualização de Dados",
+        title: "Visualização e Análise de Dados",
         skills: [
-          "Matplotlib, Seaborn, Plotly",
-          "Power BI e Looker"
+          "Power BI para dashboards interativos",
+          "Plotly e Seaborn para visualizações científicas",
+          "ETL e pipelines de dados",
+          "Business Intelligence e análise estratégica",
+          "BeautifulSoup para web scraping"
         ]
       },
-      softwareEngineering: {
-        title: "Engenharia de Software",
+      cloudEngineering: {
+        title: "Cloud e DevOps",
         skills: [
-          "Git, Github, Gitlab",
-          "Streamlit, Flask, Python API's",
-          "Cloud: Heroku, Azure"
+          "Microsoft Azure (AZ-900 e DP-900)",
+          "Google Cloud Platform (GCP)",
+          "Docker e containerização",
+          "Git e controle de versão",
+          "Deploy com Render, Vercel e Streamlit"
         ]
       }
     },
@@ -42,33 +50,41 @@ export default function Skills({ language }) {
       programmingLanguages: {
         title: "Programming Languages and Databases",
         skills: [
-          "Python with focus on data analysis",
-          "Web scraping with Python",
-          "SQL for data extraction",
-          "Databases: SQLite, PostgreSQL and MySQL"
+          "Python focused on data analysis and Machine Learning",
+          "Javascript and Angular for web development",
+          "SQL for data analysis and manipulation",
+          "Databases: MongoDB, MySQL, PostgreSQL, SQLite",
+          "REST APIs with Flask and service integration"
         ]
       },
-      statistics: {
-        title: "Statistics and Machine Learning",
+      artificialIntelligence: {
+        title: "Artificial Intelligence and Machine Learning",
         skills: [
-          "Descriptive statistics",
-          "Regression, Classification and Clustering algorithms",
-          "Machine Learning packages: Sklearn and Tensorflow"
+          "Deep Learning with TensorFlow and autoencoders",
+          "Generative AI and advanced models",
+          "NLP with NLTK and spaCy for sentiment analysis",
+          "Clustering and segmentation techniques",
+          "Predictive modeling and classification"
         ]
       },
       dataVisualization: {
-        title: "Data Visualization",
+        title: "Data Visualization and Analysis",
         skills: [
-          "Matplotlib, Seaborn, Plotly",
-          "Power BI and Looker"
+          "Power BI for interactive dashboards",
+          "Plotly and Seaborn for scientific visualizations",
+          "ETL and data pipelines",
+          "Business Intelligence and strategic analysis",
+          "BeautifulSoup for web scraping"
         ]
       },
-      softwareEngineering: {
-        title: "Software Engineering",
+      cloudEngineering: {
+        title: "Cloud and DevOps",
         skills: [
-          "Git, Github, Gitlab",
-          "Streamlit, Flask, Python APIs",
-          "Cloud: Heroku, Azure"
+          "Microsoft Azure (AZ-900 and DP-900)",
+          "Google Cloud Platform (GCP)",
+          "Docker and containerization",
+          "Git and version control",
+          "Deployment with Render, Vercel and Streamlit"
         ]
       }
     }
@@ -89,9 +105,9 @@ export default function Skills({ language }) {
           </ul>
         </div>
         <div>
-          <h3 className="text-xl font-semibold mb-2">{text.statistics.title}</h3>
+          <h3 className="text-xl font-semibold mb-2">{text.artificialIntelligence.title}</h3>
           <ul className="list-disc list-inside text-gray-300">
-            {text.statistics.skills.map((skill, index) => (
+            {text.artificialIntelligence.skills.map((skill, index) => (
               <li key={index}>{skill}</li>
             ))}
           </ul>
@@ -107,9 +123,9 @@ export default function Skills({ language }) {
           </ul>
         </div>
         <div>
-          <h3 className="text-xl font-semibold mb-2">{text.softwareEngineering.title}</h3>
+          <h3 className="text-xl font-semibold mb-2">{text.cloudEngineering.title}</h3>
           <ul className="list-disc list-inside text-gray-300">
-            {text.softwareEngineering.skills.map((skill, index) => (
+            {text.cloudEngineering.skills.map((skill, index) => (
               <li key={index}>{skill}</li>
             ))}
           </ul>
