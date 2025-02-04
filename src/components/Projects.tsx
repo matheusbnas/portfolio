@@ -42,7 +42,7 @@ export default function Projects({ language }) {
         en: "Insect Classification with Computer Vision"
       },
       category: "machine-learning",
-      imageUrl: "images/insetos.jpg",
+      imageUrl: "/images/insetos.jpg",
       link: "https://selecao-insetos.vercel.app/"
     },
     {
