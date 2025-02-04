@@ -1,34 +1,43 @@
-import React from 'react';
-import { Github } from 'lucide-react';
+import React from "react";
+import { Github } from "lucide-react";
 
 export default function About({ language }) {
   const content = {
     pt: {
+      description:
+        "Olá, meu nome é Matheus Bernardes. Sou Cientista de Dados com experiência em projetos end-to-end de Machine Learning e IA. Formado em Sistemas de Computação pela UFF e atualmente cursando MBA em Business Intelligence/AI na PUC-Rio. Combino expertise técnica em Python, TensorFlow e Azure com visão estratégica em BI, atuando na produtização de modelos escaláveis e desenvolvimento de soluções orientadas a dados para negócios.",
+
       title: "Sobre Mim",
-      description: "Olá, meu nome é Matheus Bernardes. Sou Cientista de Dados com 9 anos de experiência em projetos end-to-end de Machine Learning e IA. Formado em Sistemas de Computação pela UFF e atualmente cursando MBA em Business Intelligence/AI na PUC-Rio. Combino expertise técnica em Python, TensorFlow e Azure com visão estratégica em BI, atuando na produtização de modelos escaláveis e desenvolvimento de soluções orientadas a dados para negócios.",
       whatIDo: "O que eu faço",
       dataScience: "Ciência de Dados",
-      dataScienceDesc: "Desenvolvo modelos de Deep Learning e IA Generativa, aumentando a precisão preditiva e otimizando processos de negócio.",
+      dataScienceDesc:
+        "Desenvolvo modelos de Deep Learning e IA Generativa, aumentando a precisão preditiva e otimizando processos de negócio.",
       dataEngineering: "Engenharia de Dados",
-      dataEngineeringDesc: "Construo pipelines de dados robustos com ETL, APIs REST e monitoramento contínuo em ambiente cloud.",
+      dataEngineeringDesc:
+        "Construo pipelines de dados robustos com ETL, APIs REST e monitoramento contínuo em ambiente cloud.",
       businessIntelligence: "Business Intelligence",
-      businessIntelligenceDesc: "Crio dashboards e visualizações interativas para métricas de negócio em tempo real usando Power BI e ferramentas modernas.",
+      businessIntelligenceDesc:
+        "Crio dashboards e visualizações interativas para métricas de negócio em tempo real usando Power BI e ferramentas modernas.",
       githubStats: "Estatísticas do GitHub",
-      viewProfile: "Ver Perfil"
+      viewProfile: "Ver Perfil",
     },
     en: {
       title: "About Me",
-      description: "Hello, I'm Matheus Bernardes. I'm a Data Scientist with 9 years of experience in end-to-end Machine Learning and AI projects. Graduated in Computer Systems from UFF and currently pursuing an MBA in Business Intelligence/AI at PUC-Rio. I combine technical expertise in Python, TensorFlow, and Azure with strategic vision in BI, working on scalable model productization and data-driven business solutions.",
+      description:
+        "Hello, I'm Matheus Bernardes. I'm a Data Scientist with experience in end-to-end Machine Learning and AI projects. Graduated in Computer Systems from UFF and currently pursuing an MBA in Business Intelligence/AI at PUC-Rio. I combine technical expertise in Python, TensorFlow, and Azure with strategic vision in BI, working on scalable model productization and data-driven business solutions.",
       whatIDo: "What I Do",
       dataScience: "Data Science",
-      dataScienceDesc: "I develop Deep Learning and Generative AI models, increasing predictive accuracy and optimizing business processes.",
+      dataScienceDesc:
+        "I develop Deep Learning and Generative AI models, increasing predictive accuracy and optimizing business processes.",
       dataEngineering: "Data Engineering",
-      dataEngineeringDesc: "I build robust data pipelines with ETL, REST APIs, and continuous monitoring in cloud environments.",
+      dataEngineeringDesc:
+        "I build robust data pipelines with ETL, REST APIs, and continuous monitoring in cloud environments.",
       businessIntelligence: "Business Intelligence",
-      businessIntelligenceDesc: "I create interactive dashboards and visualizations for real-time business metrics using Power BI and modern tools.",
+      businessIntelligenceDesc:
+        "I create interactive dashboards and visualizations for real-time business metrics using Power BI and modern tools.",
       githubStats: "GitHub Stats",
-      viewProfile: "View Profile"
-    }
+      viewProfile: "View Profile",
+    },
   };
 
   const text = content[language];
@@ -51,11 +60,15 @@ export default function About({ language }) {
             <p className="text-gray-300">{text.dataScienceDesc}</p>
           </div>
           <div className="bg-gray-700 p-6 rounded-lg hover:bg-gray-600 transition-colors">
-            <h4 className="text-xl font-semibold mb-3">{text.dataEngineering}</h4>
+            <h4 className="text-xl font-semibold mb-3">
+              {text.dataEngineering}
+            </h4>
             <p className="text-gray-300">{text.dataEngineeringDesc}</p>
           </div>
           <div className="bg-gray-700 p-6 rounded-lg hover:bg-gray-600 transition-colors">
-            <h4 className="text-xl font-semibold mb-3">{text.businessIntelligence}</h4>
+            <h4 className="text-xl font-semibold mb-3">
+              {text.businessIntelligence}
+            </h4>
             <p className="text-gray-300">{text.businessIntelligenceDesc}</p>
           </div>
         </div>
