@@ -1,88 +1,108 @@
-import React, { useState } from 'react';
-import { Eye } from 'lucide-react';
+import React, { useState } from "react";
+import { Eye } from "lucide-react";
 
 export default function Projects({ language }) {
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState("all");
 
   const projects = [
     {
       id: 1,
       title: {
         pt: "Construção de um programa de fidelidade com clusterização de clientes",
-        en: "Building a loyalty program with customer clustering"
+        en: "Building a loyalty program with customer clustering",
       },
       category: "machine-learning",
-      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-      link: "https://github.com/matheusbnas/desafio-cientista-de-dados"
+      imageUrl:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+      link: "https://github.com/matheusbnas/desafio-cientista-de-dados",
     },
     {
       id: 2,
       title: {
         pt: "Predição de cavalos sobreviventes com base de dados anteriores",
-        en: "Prediction of surviving horses based on previous data"
+        en: "Prediction of surviving horses based on previous data",
       },
       category: "machine-learning",
-      imageUrl: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=400&fit=crop",
-      link: "https://github.com/matheusbnas/projeto_dataMining_puc"
+      imageUrl:
+        "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=400&fit=crop",
+      link: "https://github.com/matheusbnas/projeto_dataMining_puc",
     },
     {
       id: 3,
       title: {
         pt: "Rosalia Koury Gestão do Tempo e Vida Acadêmica",
-        en: "Rosalia Koury Time Management and Academic Life"
+        en: "Rosalia Koury Time Management and Academic Life",
       },
       category: "business-intelligence",
-      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
-      link: "https://app.powerbi.com/view?r=eyJrIjoiNzAyNjA1MGMtOGFmOC00YjZjLThjZDYtMjQ1OTZjZWUwYzNlIiwidCI6ImIyZTE2Mjk3LTJlZDYtNDFiOC1iODIyLWE5NTRlOTViZDJmMCIsImMiOjR9"
+      imageUrl:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+      link: "https://app.powerbi.com/view?r=eyJrIjoiNzAyNjA1MGMtOGFmOC00YjZjLThjZDYtMjQ1OTZjZWUwYzNlIiwidCI6ImIyZTE2Mjk3LTJlZDYtNDFiOC1iODIyLWE5NTRlOTViZDJmMCIsImMiOjR9",
     },
     {
       id: 4,
       title: {
         pt: "Classificação de Insetos com Visão Computacional",
-        en: "Insect Classification with Computer Vision"
+        en: "Insect Classification with Computer Vision",
       },
       category: "machine-learning",
-      imageUrl: "/images/insetos.jpg",
-      link: "https://selecao-insetos.vercel.app/"
+      imageUrl: "images/insetos.jpg",
+      link: "https://selecao-insetos.vercel.app/",
     },
     {
       id: 5,
       title: {
         pt: "Chatbot com OpenAI",
-        en: "OpenAI Chatbot"
+        en: "OpenAI Chatbot",
       },
       category: "artificial-intelligence",
-      imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
-      link: "https://chatbot-ai-openai.streamlit.app/"
+      imageUrl:
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
+      link: "https://chatbot-ai-openai.streamlit.app/",
     },
     {
       id: 6,
       title: {
         pt: "App de Análise de Jogadores de FIFA",
-        en: "FIFA Players Analysis App"
+        en: "FIFA Players Analysis App",
       },
       category: "data-analysis",
-      imageUrl: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&h=400&fit=crop",
-      link: "https://projetoappfifa.streamlit.app/"
-    }
+      imageUrl:
+        "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&h=400&fit=crop",
+      link: "https://projetoappfifa.streamlit.app/",
+    },
   ];
 
   const categories = [
-    { id: 'all', label: { pt: 'Todos', en: 'All' } },
-    { id: 'machine-learning', label: { pt: 'Machine Learning', en: 'Machine Learning' } },
-    { id: 'business-intelligence', label: { pt: 'Business Intelligence', en: 'Business Intelligence' } },
-    { id: 'artificial-intelligence', label: { pt: 'Inteligência Artificial', en: 'Artificial Intelligence' } },
-    { id: 'data-analysis', label: { pt: 'Análise de Dados', en: 'Data Analysis' } }
+    { id: "all", label: { pt: "Todos", en: "All" } },
+    {
+      id: "machine-learning",
+      label: { pt: "Machine Learning", en: "Machine Learning" },
+    },
+    {
+      id: "business-intelligence",
+      label: { pt: "Business Intelligence", en: "Business Intelligence" },
+    },
+    {
+      id: "artificial-intelligence",
+      label: { pt: "Inteligência Artificial", en: "Artificial Intelligence" },
+    },
+    {
+      id: "data-analysis",
+      label: { pt: "Análise de Dados", en: "Data Analysis" },
+    },
   ];
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === filter);
+  const filteredProjects =
+    filter === "all"
+      ? projects
+      : projects.filter((project) => project.category === filter);
 
   return (
     <article className="space-y-8">
       <header>
-        <h2 className="text-3xl font-bold mb-6">{language === 'pt' ? 'Portfólio' : 'Portfolio'}</h2>
+        <h2 className="text-3xl font-bold mb-6">
+          {language === "pt" ? "Portfólio" : "Portfolio"}
+        </h2>
       </header>
 
       <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -92,9 +112,10 @@ export default function Projects({ language }) {
             onClick={() => setFilter(category.id)}
             className={`
               px-4 py-2 rounded-lg transition-colors
-              ${filter === category.id 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              ${
+                filter === category.id
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
               }
             `}
           >
@@ -127,7 +148,7 @@ export default function Projects({ language }) {
                 {project.title[language]}
               </h3>
               <p className="text-sm text-gray-400 capitalize">
-                {project.category.replace('-', ' ')}
+                {project.category.replace("-", " ")}
               </p>
             </div>
           </a>
