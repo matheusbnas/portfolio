@@ -6,7 +6,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Blog from "./components/Blog";
-import Footer from "./components/Footer.jsx";
+import Footer from "./components/footer.tsx";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
