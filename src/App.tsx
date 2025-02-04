@@ -51,6 +51,7 @@ function App() {
       >
         <Menu size={24} />
       </button>
+
       {/* Sidebar */}
       <div
         className={`
@@ -107,11 +108,13 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* Main Content */}
       <main
         className={`
-  transition-all duration-300 ease-in-out
-  md:ml-64 p-6
-`}
+        transition-all duration-300 ease-in-out
+        md:ml-64 p-6
+      `}
       >
         <div className="max-w-4xl mx-auto">
           <div className="bg-gray-800 rounded-lg p-6 shadow-xl">
