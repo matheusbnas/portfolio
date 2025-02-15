@@ -27,7 +27,14 @@ export default function Projects({ language }) {
       imageUrl:
         "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=400&fit=crop",
       link: "https://github.com/matheusbnas/projeto_dataMining_puc",
-      tags: ["Python", "XGBoost", "Random Forest", "Pandas"],
+      tags: [
+        "Python",
+        "KNeighborsClassifier",
+        "LogisticRegression",
+        "Random Forest",
+        "SVM"
+        "Pandas",
+      ],
     },
     {
       id: 3,
@@ -62,7 +69,7 @@ export default function Projects({ language }) {
       imageUrl:
         "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
       link: "https://chatbot-ai-openai.streamlit.app/",
-      tags: ["Python", "OpenAI", "Streamlit", "LangChain"],
+      tags: ["Python", "OpenAI", "Streamlit"],
     },
     {
       id: 6,
