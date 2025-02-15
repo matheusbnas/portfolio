@@ -15,6 +15,7 @@ export default function Projects({ language }) {
       imageUrl:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
       link: "https://github.com/matheusbnas/desafio-cientista-de-dados",
+      tags: ["Python", "Scikit-learn", "Pandas", "K-means"],
     },
     {
       id: 2,
@@ -26,6 +27,7 @@ export default function Projects({ language }) {
       imageUrl:
         "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=400&fit=crop",
       link: "https://github.com/matheusbnas/projeto_dataMining_puc",
+      tags: ["Python", "XGBoost", "Random Forest", "Pandas"],
     },
     {
       id: 3,
@@ -37,6 +39,7 @@ export default function Projects({ language }) {
       imageUrl:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
       link: "https://app.powerbi.com/view?r=eyJrIjoiNzAyNjA1MGMtOGFmOC00YjZjLThjZDYtMjQ1OTZjZWUwYzNlIiwidCI6ImIyZTE2Mjk3LTJlZDYtNDFiOC1iODIyLWE5NTRlOTViZDJmMCIsImMiOjR9",
+      tags: ["Power BI", "DAX", "SQL", "Data Visualization"],
     },
     {
       id: 4,
@@ -47,6 +50,7 @@ export default function Projects({ language }) {
       category: "machine-learning",
       imageUrl: "images/insetos.jpg",
       link: "https://selecao-insetos.vercel.app/",
+      tags: ["Python", "TensorFlow", "OpenCV", "CNN"],
     },
     {
       id: 5,
@@ -58,6 +62,7 @@ export default function Projects({ language }) {
       imageUrl:
         "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
       link: "https://chatbot-ai-openai.streamlit.app/",
+      tags: ["Python", "OpenAI", "Streamlit", "LangChain"],
     },
     {
       id: 6,
@@ -69,6 +74,7 @@ export default function Projects({ language }) {
       imageUrl:
         "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&h=400&fit=crop",
       link: "https://projetoappfifa.streamlit.app/",
+      tags: ["Python", "Streamlit", "Pandas", "Plotly"],
     },
   ];
 
@@ -147,9 +153,16 @@ export default function Projects({ language }) {
               <h3 className="text-lg font-semibold mb-2 group-hover:text-blue-400 transition-colors">
                 {project.title[language]}
               </h3>
-              <p className="text-sm text-gray-400 capitalize">
-                {project.category.replace("-", " ")}
-              </p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {project.tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="px-2 py-1 bg-gray-600 text-xs rounded-full text-gray-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </a>
         ))}

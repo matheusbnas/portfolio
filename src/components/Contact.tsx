@@ -1,26 +1,28 @@
-import React from 'react';
-import { Mail, Linkedin, Github, Phone, MapPin } from 'lucide-react';
+import React from "react";
+import { Mail, Linkedin, Github, Phone, MapPin } from "lucide-react";
 
 export default function Contact({ language }) {
   const content = {
     pt: {
       title: "Contato",
       subtitle: "Vamos nos conectar!",
-      description: "Sinta-se à vontade para entrar em contato comigo para colaborações potenciais, discussões de projetos ou ofertas. Será um prazer ouvir de você e me envolver em conversas frutíferas que possam levar a parcerias mutuamente benéficas.",
+      description:
+        "Sinta-se à vontade para entrar em contato comigo para colaborações potenciais, discussões de projetos ou ofertas. Será um prazer ouvir de você e me envolver em conversas frutíferas que possam levar a parcerias mutuamente benéficas.",
       email: "Email",
       phone: "Telefone",
       location: "Localização",
-      social: "Redes Sociais"
+      social: "Redes Sociais",
     },
     en: {
       title: "Contact",
       subtitle: "Let's Connect!",
-      description: "Feel free to reach out to me for potential collaborations, project discussions, or offers. It will be a pleasure to hear from you and engage in fruitful conversations that could lead to mutually beneficial partnerships.",
+      description:
+        "Feel free to reach out to me for potential collaborations, project discussions, or offers. It will be a pleasure to hear from you and engage in fruitful conversations that could lead to mutually beneficial partnerships.",
       email: "Email",
       phone: "Phone",
       location: "Location",
-      social: "Social Media"
-    }
+      social: "Social Media",
+    },
   };
 
   const text = content[language];
@@ -41,9 +43,13 @@ export default function Contact({ language }) {
               <Mail className="text-blue-400" size={24} />
               <h3 className="text-xl font-semibold">{text.email}</h3>
             </div>
-            <a 
-              href="mailto:matheusbnas@gmail.com" 
+            <a
+              href="mailto:matheusbnas@gmail.com"
               className="text-gray-300 hover:text-blue-400 transition-colors"
+              onClick={(e) => {
+                window.location.href = "mailto:matheusbnas@gmail.com";
+                e.preventDefault();
+              }}
             >
               matheusbnas@gmail.com
             </a>
@@ -54,9 +60,9 @@ export default function Contact({ language }) {
               <Phone className="text-blue-400" size={24} />
               <h3 className="text-xl font-semibold">{text.phone}</h3>
             </div>
-            <a 
-              href="https://api.whatsapp.com/send?phone=5521994288152" 
-              target="_blank" 
+            <a
+              href="https://api.whatsapp.com/send?phone=5521994288152"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-blue-400 transition-colors"
             >
@@ -78,25 +84,29 @@ export default function Contact({ language }) {
               <h3 className="text-xl font-semibold">{text.social}</h3>
             </div>
             <div className="flex space-x-4">
-              <a 
-                href="https://www.linkedin.com/in/matheusbnas/" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/matheusbnas/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-blue-400 transition-colors"
               >
                 <Linkedin size={24} />
               </a>
-              <a 
-                href="https://github.com/matheusbnas" 
-                target="_blank" 
+              <a
+                href="https://github.com/matheusbnas"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-blue-400 transition-colors"
               >
                 <Github size={24} />
               </a>
-              <a 
+              <a
                 href="mailto:matheusbnas@gmail.com"
                 className="text-gray-300 hover:text-blue-400 transition-colors"
+                onClick={(e) => {
+                  window.location.href = "mailto:matheusbnas@gmail.com";
+                  e.preventDefault();
+                }}
               >
                 <Mail size={24} />
               </a>
