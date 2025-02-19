@@ -32,7 +32,7 @@ export default function Projects({ language }) {
         "KNeighborsClassifier",
         "LogisticRegression",
         "Random Forest",
-        "SVM"
+        "SVM",
         "Pandas",
       ],
     },
