@@ -5,7 +5,7 @@ export default function About({ language }) {
   const content = {
     pt: {
       description:
-        "Olá, meu nome é Matheus Bernardes. Sou Cientista de Dados com experiência em projetos end-to-end de Machine Learning e IA. Formado em Sistemas de Computação pela UFF e atualmente cursando MBA em Business Intelligence/AI na PUC-Rio. Combino expertise técnica em Python, TensorFlow e Azure com visão estratégica em BI, atuando na produtização de modelos escaláveis e desenvolvimento de soluções orientadas a dados para negócios.",
+        "Olá, meu nome é Matheus Bernardes. Sou Cientista de Dados com experiência em projetos end-to-end de Machine Learning e IA. Formado em Sistemas de Computação pela UFF e MBA em Business Intelligence/AI na PUC-Rio. Combino expertise técnica em Python, TensorFlow e Azure com visão estratégica em BI, atuando na produtização de modelos escaláveis e desenvolvimento de soluções orientadas a dados para negócios.",
 
       title: "Sobre Mim",
       whatIDo: "O que eu faço",
@@ -24,7 +24,7 @@ export default function About({ language }) {
     en: {
       title: "About Me",
       description:
-        "Hello, I'm Matheus Bernardes. I'm a Data Scientist with experience in end-to-end Machine Learning and AI projects. Graduated in Computer Systems from UFF and currently pursuing an MBA in Business Intelligence/AI at PUC-Rio. I combine technical expertise in Python, TensorFlow, and Azure with strategic vision in BI, working on scalable model productization and data-driven business solutions.",
+        "Hello, I'm Matheus Bernardes. I'm a Data Scientist with experience in end-to-end Machine Learning and AI projects. Graduated in Computer Systems from UFF and MBA in Business Intelligence/AI at PUC-Rio. I combine technical expertise in Python, TensorFlow, and Azure with strategic vision in BI, working on scalable model productization and data-driven business solutions.",
       whatIDo: "What I Do",
       dataScience: "Data Science",
       dataScienceDesc:
@@ -75,23 +75,6 @@ export default function About({ language }) {
       </section>
 
       <section>
-        <h3 className="text-2xl font-semibold mb-6">{text.githubStats}</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-gray-700 p-4 rounded-lg">
-            <img
-              src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=matheusbnas&show_icons=true&theme=dark&include_all_commits=true&count_private=true"
-              alt="GitHub Stats"
-              className="w-full"
-            />
-          </div>
-          <div className="bg-gray-700 p-4 rounded-lg">
-            <img
-              src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=matheusbnas&layout=compact&langs_count=16&theme=dark"
-              alt="Top Languages"
-              className="w-full"
-            />
-          </div>
-        </div>
         <div className="mt-4 text-center">
           <a
             href="https://github.com/matheusbnas"
