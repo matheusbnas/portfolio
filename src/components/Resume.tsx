@@ -149,18 +149,18 @@ export default function Resume({ language }: ResumeProps) {
       },
       jobs: [
         {
-          title: "Data Scientist",
+          title: "Mid-level Data Scientist",
           company: "COR",
           period: "09/2025 - Present",
           location: "Rio de Janeiro, Brazil",
           description: [
-            "Development of AI and Machine Learning solutions for corporate process optimization",
-            "Complex data analysis and creation of predictive models for strategic decision making",
+            "Development of AI and Machine Learning solutions for process optimization to mitigate risks in Rio de Janeiro city",
+            "Complex data analysis and creation of predictive models for strategic decision making in artificial intelligence tools for BI process optimization",
             "Implementation of data pipelines and automation of analytical processes",
           ],
         },
         {
-          title: "Data Scientist / Founder",
+          title: "Mid-level Data Scientist / Project Lead Developer",
           company: "Matech.AI",
           period: "09/2023 - Present",
           location: "Rio de Janeiro, Brazil",
