@@ -1,21 +1,40 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Briefcase, GraduationCap, ChevronDown, ChevronUp } from "lucide-react";
 
-export default function Resume({ language }) {
-  const [expandedJobs, setExpandedJobs] = useState({});
+interface ResumeProps {
+  language: "pt" | "en";
+}
+
+interface Job {
+  title: string;
+  company: string;
+  period: string;
+  location: string;
+  description: string[];
+}
+
+interface Education {
+  degree: string;
+  institution: string;
+  period: string;
+  location: string;
+}
+
+export default function Resume({ language }: ResumeProps) {
+  const [expandedJobs, setExpandedJobs] = useState<Record<number, boolean>>({});
   const [expandedSection, setExpandedSection] = useState({
     experience: true,
     education: true,
   });
 
-  const toggleJob = (index) => {
+  const toggleJob = (index: number) => {
     setExpandedJobs((prev) => ({
       ...prev,
       [index]: !prev[index],
     }));
   };
 
-  const toggleSection = (section) => {
+  const toggleSection = (section: "experience" | "education") => {
     setExpandedSection((prev) => ({
       ...prev,
       [section]: !prev[section],
@@ -44,7 +63,18 @@ export default function Resume({ language }) {
       },
       jobs: [
         {
-          title: "Cientista de Dados",
+          title: "Cientista de Dados Pleno",
+          company: "COR",
+          period: "09/2025 - Presente",
+          location: "Rio de Janeiro",
+          description: [
+            "Desenvolvimento de soluções de IA e Machine Learning para otimização de processos para mitigar riscos na cidade do Rio de Janeiro",
+            "Análise de dados complexos e criação de modelos preditivos para tomada de decisão estratégica em ferramentas de inteligência artificial para otimização de processos de BI",
+            "Implementação de pipelines de dados e automação de processos analíticos",
+          ],
+        },
+        {
+          title: "Cientista de Dados Pleno / Project Lead Developer",
           company: "Matech.AI",
           period: "09/2023 - Presente",
           location: "Rio de Janeiro",
@@ -52,6 +82,7 @@ export default function Resume({ language }) {
             "Desenvolvimento de modelos de Deep Learning (autoencoders, IA Generativa) com TensorFlow, aumentando a precisão preditiva em 30%",
             "Engenharia de ML: Produtização de modelos em Azure, incluindo APIs REST (Flask) e monitoramento contínuo",
             "Colaboração com áreas de negócio para identificar oportunidades de IA, traduzindo demandas em soluções técnicas",
+            "Gestão estratégica e desenvolvimento de produtos de IA para clientes corporativos",
           ],
         },
         {
@@ -119,6 +150,17 @@ export default function Resume({ language }) {
       jobs: [
         {
           title: "Data Scientist",
+          company: "COR",
+          period: "09/2025 - Present",
+          location: "Rio de Janeiro, Brazil",
+          description: [
+            "Development of AI and Machine Learning solutions for corporate process optimization",
+            "Complex data analysis and creation of predictive models for strategic decision making",
+            "Implementation of data pipelines and automation of analytical processes",
+          ],
+        },
+        {
+          title: "Data Scientist / Founder",
           company: "Matech.AI",
           period: "09/2023 - Present",
           location: "Rio de Janeiro, Brazil",
@@ -126,6 +168,7 @@ export default function Resume({ language }) {
             "Development of Deep Learning models (autoencoders, Generative AI) with TensorFlow, increasing predictive accuracy by 30%",
             "ML Engineering: Model productization in Azure, including REST APIs (Flask) and continuous monitoring",
             "Collaboration with business areas to identify AI opportunities, translating demands into technical solutions",
+            "Strategic management and development of AI products for corporate clients",
           ],
         },
         {
@@ -195,7 +238,7 @@ export default function Resume({ language }) {
           </div>
           {expandedSection.experience && (
             <div className="space-y-6">
-              {currentContent.jobs.map((job, index) => (
+              {currentContent.jobs.map((job: Job, index: number) => (
                 <div key={index} className="bg-gray-700 p-6 rounded-lg">
                   <div
                     className="flex justify-between items-center cursor-pointer"
@@ -218,7 +261,7 @@ export default function Resume({ language }) {
                   </div>
                   {expandedJobs[index] && (
                     <ul className="space-y-2 text-gray-300 mt-4">
-                      {job.description.map((item, idx) => (
+                      {job.description.map((item: string, idx: number) => (
                         <li key={idx} className="flex items-start">
                           <span className="mr-2">•</span>
                           <span>{item}</span>
@@ -249,15 +292,17 @@ export default function Resume({ language }) {
           </div>
           {expandedSection.education && (
             <div className="space-y-6">
-              {currentContent.education.items.map((edu, index) => (
-                <div key={index} className="bg-gray-700 p-6 rounded-lg">
-                  <h4 className="text-xl font-semibold mb-2">{edu.degree}</h4>
-                  <p className="text-gray-400">{edu.institution}</p>
-                  <p className="text-gray-400">
-                    {edu.period} | {edu.location}
-                  </p>
-                </div>
-              ))}
+              {currentContent.education.items.map(
+                (edu: Education, index: number) => (
+                  <div key={index} className="bg-gray-700 p-6 rounded-lg">
+                    <h4 className="text-xl font-semibold mb-2">{edu.degree}</h4>
+                    <p className="text-gray-400">{edu.institution}</p>
+                    <p className="text-gray-400">
+                      {edu.period} | {edu.location}
+                    </p>
+                  </div>
+                )
+              )}
             </div>
           )}
         </section>
