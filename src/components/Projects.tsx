@@ -208,7 +208,7 @@ export default function Projects({ language }) {
               ${
                 filter === category.id
                   ? "bg-blue-600 text-white"
-                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                  : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
               }
             `}
           >
@@ -224,7 +224,7 @@ export default function Projects({ language }) {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-gray-700 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+            className="group bg-white dark:bg-gray-700 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 shadow-sm"
           >
             <div className="relative">
               <img
@@ -237,11 +237,11 @@ export default function Projects({ language }) {
               </div>
             </div>
             <div className="p-4">
-              <h3 className="text-lg font-semibold mb-2 group-hover:text-blue-400 transition-colors">
+              <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-blue-400 transition-colors">
                 {project.title[language]}
               </h3>
               {project.description && (
-                <p className="text-sm text-gray-300 mb-3">
+                <p className="text-sm text-gray-500 dark:text-gray-300 mb-3">
                   {project.description[language]}
                 </p>
               )}
@@ -249,7 +249,7 @@ export default function Projects({ language }) {
                 {project.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="px-2 py-1 bg-gray-600 text-xs rounded-full text-gray-300"
+                    className="px-2 py-1 bg-gray-100 dark:bg-gray-600 text-xs rounded-full text-gray-600 dark:text-gray-300"
                   >
                     {tag}
                   </span>

@@ -239,19 +239,19 @@ export default function Resume({ language }: ResumeProps) {
           {expandedSection.experience && (
             <div className="space-y-6">
               {currentContent.jobs.map((job: Job, index: number) => (
-                <div key={index} className="bg-gray-700 p-6 rounded-lg">
+                <div key={index} className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
                   <div
                     className="flex justify-between items-center cursor-pointer"
                     onClick={() => toggleJob(index)}
                   >
                     <div>
-                      <h4 className="text-xl font-semibold mb-2">
+                      <h4 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
                         {job.title}
                       </h4>
-                      <p className="text-gray-400">
+                      <p className="text-gray-500 dark:text-gray-400">
                         {job.company} | {job.period}
                       </p>
-                      <p className="text-gray-400">{job.location}</p>
+                      <p className="text-gray-500 dark:text-gray-400">{job.location}</p>
                     </div>
                     {expandedJobs[index] ? (
                       <ChevronUp className="text-gray-400" size={24} />
@@ -260,7 +260,7 @@ export default function Resume({ language }: ResumeProps) {
                     )}
                   </div>
                   {expandedJobs[index] && (
-                    <ul className="space-y-2 text-gray-300 mt-4">
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300 mt-4">
                       {job.description.map((item: string, idx: number) => (
                         <li key={idx} className="flex items-start">
                           <span className="mr-2">•</span>
@@ -294,10 +294,10 @@ export default function Resume({ language }: ResumeProps) {
             <div className="space-y-6">
               {currentContent.education.items.map(
                 (edu: Education, index: number) => (
-                  <div key={index} className="bg-gray-700 p-6 rounded-lg">
-                    <h4 className="text-xl font-semibold mb-2">{edu.degree}</h4>
-                    <p className="text-gray-400">{edu.institution}</p>
-                    <p className="text-gray-400">
+                  <div key={index} className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
+                    <h4 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{edu.degree}</h4>
+                    <p className="text-gray-500 dark:text-gray-400">{edu.institution}</p>
+                    <p className="text-gray-500 dark:text-gray-400">
                       {edu.period} | {edu.location}
                     </p>
                   </div>

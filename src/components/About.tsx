@@ -47,28 +47,28 @@ export default function About({ language }) {
         <h2 className="text-3xl font-bold mb-6">{text.title}</h2>
       </header>
 
-      <section className="text-gray-300 space-y-4">
+      <section className="text-gray-600 dark:text-gray-300 space-y-4">
         <p>{text.description}</p>
       </section>
 
       <section>
         <h3 className="text-2xl font-semibold mb-6">{text.whatIDo}</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gray-700 p-6 rounded-lg hover:bg-gray-600 transition-colors">
-            <h4 className="text-xl font-semibold mb-3">{text.dataScience}</h4>
-            <p className="text-gray-300">{text.dataScienceDesc}</p>
+          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
+            <h4 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{text.dataScience}</h4>
+            <p className="text-gray-600 dark:text-gray-300">{text.dataScienceDesc}</p>
           </div>
-          <div className="bg-gray-700 p-6 rounded-lg hover:bg-gray-600 transition-colors">
-            <h4 className="text-xl font-semibold mb-3">
+          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
+            <h4 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
               {text.dataEngineering}
             </h4>
-            <p className="text-gray-300">{text.dataEngineeringDesc}</p>
+            <p className="text-gray-600 dark:text-gray-300">{text.dataEngineeringDesc}</p>
           </div>
-          <div className="bg-gray-700 p-6 rounded-lg hover:bg-gray-600 transition-colors">
-            <h4 className="text-xl font-semibold mb-3">
+          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
+            <h4 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
               {text.businessIntelligence}
             </h4>
-            <p className="text-gray-300">{text.businessIntelligenceDesc}</p>
+            <p className="text-gray-600 dark:text-gray-300">{text.businessIntelligenceDesc}</p>
           </div>
         </div>
       </section>
@@ -79,7 +79,7 @@ export default function About({ language }) {
             href="https://github.com/matheusbnas"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors"
+            className="inline-flex items-center space-x-2 px-6 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors text-gray-700 dark:text-gray-300"
           >
             <Github size={20} />
             <span>{text.viewProfile}</span>

@@ -1,90 +1,89 @@
-import React from 'react';
 
 export default function Skills({ language }) {
   const content = {
     pt: {
       title: "Habilidades",
       programmingLanguages: {
-        title: "Linguagens de Programação e Banco de Dados",
+        title: "Linguagens & Bancos de Dados",
         skills: [
-          "Python com foco em análise de dados e Machine Learning",
-          "Javascript e Angular para desenvolvimento web",
-          "SQL para análise e manipulação de dados",
-          "Bancos de Dados: MongoDB, MySQL, PostgreSQL, SQLite",
-          "APIs REST com Flask e integração de serviços"
+          "Python — análise de dados, ML, automação e APIs",
+          "SQL — consultas complexas, modelagem e otimização",
+          "JavaScript / TypeScript — desenvolvimento web e dashboards",
+          "Bancos: MongoDB, MySQL, PostgreSQL, SQLite",
+          "APIs REST com Flask e FastAPI"
         ]
       },
       artificialIntelligence: {
-        title: "Inteligência Artificial e Machine Learning",
+        title: "IA, Machine Learning & Agentes",
         skills: [
-          "Deep Learning com TensorFlow e autoencoders",
-          "IA Generativa e modelos avançados",
-          "NLP com NLTK e spaCy para análise de sentimentos",
-          "Clustering e técnicas de segmentação",
-          "Modelagem preditiva e classificação"
+          "IA Generativa — LLMs, RAG, Agentes e Multiagentes",
+          "Bancos Vetoriais — FAISS, ChromaDB para busca semântica",
+          "Machine Learning — Scikit-learn, classificação, regressão, clustering",
+          "Deep Learning — TensorFlow, CNN, Visão Computacional, OpenCV",
+          "NLP — NLTK, spaCy, análise de sentimentos e processamento de texto"
         ]
       },
       dataVisualization: {
-        title: "Visualização e Análise de Dados",
+        title: "Visualização, BI & Análise",
         skills: [
-          "Power BI para dashboards interativos",
-          "Plotly e Seaborn para visualizações científicas",
-          "ETL e pipelines de dados",
-          "Business Intelligence e análise estratégica",
-          "BeautifulSoup para web scraping"
+          "Power BI — dashboards interativos, DAX e relatórios executivos",
+          "Pentaho — ETL e transformação de dados para BI",
+          "Streamlit — apps interativos para análise e IA",
+          "Plotly, Matplotlib, Seaborn — visualizações científicas",
+          "Apresentações executivas — PowerPoint e relatórios analíticos"
         ]
       },
       cloudEngineering: {
-        title: "Cloud e DevOps",
+        title: "Cloud, Pipeline & DevOps",
         skills: [
-          "Microsoft Azure (AZ-900 e DP-900)",
-          "Google Cloud Platform (GCP)",
-          "Docker e containerização",
-          "Git e controle de versão",
-          "Deploy com Render, Vercel e Streamlit"
+          "Google Cloud Platform (GCP) — storage, pipelines e deploy",
+          "Prefect — orquestração de pipelines de dados",
+          "Docker — containerização de aplicações",
+          "Git/GitHub — controle de versão e CI/CD",
+          "Deploy — Streamlit Cloud, Vercel, Render, Netlify"
         ]
       }
     },
     en: {
       title: "Skills",
       programmingLanguages: {
-        title: "Programming Languages and Databases",
+        title: "Languages & Databases",
         skills: [
-          "Python focused on data analysis and Machine Learning",
-          "Javascript and Angular for web development",
-          "SQL for data analysis and manipulation",
+          "Python — data analysis, ML, automation and APIs",
+          "SQL — complex queries, modeling and optimization",
+          "JavaScript / TypeScript — web development and dashboards",
           "Databases: MongoDB, MySQL, PostgreSQL, SQLite",
-          "REST APIs with Flask and service integration"
+          "REST APIs with Flask and FastAPI"
         ]
       },
       artificialIntelligence: {
-        title: "Artificial Intelligence and Machine Learning",
+        title: "AI, Machine Learning & Agents",
         skills: [
-          "Deep Learning with TensorFlow and autoencoders",
-          "Generative AI and advanced models",
-          "NLP with NLTK and spaCy for sentiment analysis",
-          "Clustering and segmentation techniques",
-          "Predictive modeling and classification"
+          "Generative AI — LLMs, RAG, Agents and Multi-agents",
+          "Vector Databases — FAISS, ChromaDB for semantic search",
+          "Machine Learning — Scikit-learn, classification, regression, clustering",
+          "Deep Learning — TensorFlow, CNN, Computer Vision, OpenCV",
+          "NLP — NLTK, spaCy, sentiment analysis and text processing"
         ]
       },
       dataVisualization: {
-        title: "Data Visualization and Analysis",
+        title: "Visualization, BI & Analysis",
         skills: [
-          "Power BI for interactive dashboards",
-          "Plotly and Seaborn for scientific visualizations",
-          "ETL and data pipelines",
-          "Business Intelligence and strategic analysis",
-          "BeautifulSoup for web scraping"
+          "Power BI — interactive dashboards, DAX and executive reports",
+          "Pentaho — ETL and data transformation for BI",
+          "Streamlit — interactive apps for data analysis and AI",
+          "Plotly, Matplotlib, Seaborn — scientific visualizations",
+          "Executive presentations — PowerPoint and analytical reports"
         ]
       },
       cloudEngineering: {
-        title: "Cloud and DevOps",
+        title: "Cloud, Pipeline & DevOps",
         skills: [
-          "Microsoft Azure (AZ-900 and DP-900)",
-          "Google Cloud Platform (GCP)",
-          "Docker and containerization",
-          "Git and version control",
-          "Deployment with Render, Vercel and Streamlit"
+          "Google Cloud Platform (GCP) — storage, pipelines and deploy",
+          "Prefect — data pipeline orchestration",
+          "Docker — application containerization",
+          "Git/GitHub — version control and CI/CD",
+          "Deploy — Streamlit Cloud, Vercel, Render, Netlify"
         ]
       }
     }
@@ -99,9 +98,9 @@ export default function Skills({ language }) {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-gray-700 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-4">{text.programmingLanguages.title}</h3>
-          <ul className="space-y-2 text-gray-300">
+        <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
+          <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{text.programmingLanguages.title}</h3>
+          <ul className="space-y-2 text-gray-600 dark:text-gray-300">
             {text.programmingLanguages.skills.map((skill, index) => (
               <li key={index} className="flex items-start">
                 <span className="mr-2">•</span>
@@ -111,9 +110,9 @@ export default function Skills({ language }) {
           </ul>
         </div>
 
-        <div className="bg-gray-700 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-4">{text.artificialIntelligence.title}</h3>
-          <ul className="space-y-2 text-gray-300">
+        <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
+          <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{text.artificialIntelligence.title}</h3>
+          <ul className="space-y-2 text-gray-600 dark:text-gray-300">
             {text.artificialIntelligence.skills.map((skill, index) => (
               <li key={index} className="flex items-start">
                 <span className="mr-2">•</span>
@@ -123,9 +122,9 @@ export default function Skills({ language }) {
           </ul>
         </div>
 
-        <div className="bg-gray-700 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-4">{text.dataVisualization.title}</h3>
-          <ul className="space-y-2 text-gray-300">
+        <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
+          <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{text.dataVisualization.title}</h3>
+          <ul className="space-y-2 text-gray-600 dark:text-gray-300">
             {text.dataVisualization.skills.map((skill, index) => (
               <li key={index} className="flex items-start">
                 <span className="mr-2">•</span>
@@ -135,9 +134,9 @@ export default function Skills({ language }) {
           </ul>
         </div>
 
-        <div className="bg-gray-700 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-4">{text.cloudEngineering.title}</h3>
-          <ul className="space-y-2 text-gray-300">
+        <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
+          <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{text.cloudEngineering.title}</h3>
+          <ul className="space-y-2 text-gray-600 dark:text-gray-300">
             {text.cloudEngineering.skills.map((skill, index) => (
               <li key={index} className="flex items-start">
                 <span className="mr-2">•</span>

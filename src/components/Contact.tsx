@@ -1,4 +1,3 @@
-import React from "react";
 import { Mail, Linkedin, Github, Phone, MapPin } from "lucide-react";
 
 export default function Contact({ language }) {
@@ -31,21 +30,21 @@ export default function Contact({ language }) {
     <article className="space-y-8">
       <header>
         <h2 className="text-3xl font-bold mb-2">{text.title}</h2>
-        <p className="text-xl text-gray-400">{text.subtitle}</p>
+        <p className="text-xl text-gray-500 dark:text-gray-400">{text.subtitle}</p>
       </header>
 
-      <section className="text-gray-300">
+      <section className="text-gray-600 dark:text-gray-300">
         <p className="mb-8">{text.description}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-gray-700 p-6 rounded-lg">
+          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
             <div className="flex items-center space-x-3 mb-4">
               <Mail className="text-blue-400" size={24} />
-              <h3 className="text-xl font-semibold">{text.email}</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{text.email}</h3>
             </div>
             <a
               href="mailto:matheusbnas@gmail.com"
-              className="text-gray-300 hover:text-blue-400 transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-400 transition-colors"
               onClick={(e) => {
                 window.location.href = "mailto:matheusbnas@gmail.com";
                 e.preventDefault();
@@ -55,40 +54,40 @@ export default function Contact({ language }) {
             </a>
           </div>
 
-          <div className="bg-gray-700 p-6 rounded-lg">
+          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
             <div className="flex items-center space-x-3 mb-4">
               <Phone className="text-blue-400" size={24} />
-              <h3 className="text-xl font-semibold">{text.phone}</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{text.phone}</h3>
             </div>
             <a
               href="https://api.whatsapp.com/send?phone=5521994288152"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-blue-400 transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-400 transition-colors"
             >
               +55 21 99428-8152
             </a>
           </div>
 
-          <div className="bg-gray-700 p-6 rounded-lg">
+          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
             <div className="flex items-center space-x-3 mb-4">
               <MapPin className="text-blue-400" size={24} />
-              <h3 className="text-xl font-semibold">{text.location}</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{text.location}</h3>
             </div>
-            <p className="text-gray-300">Rio de Janeiro, Brazil</p>
+            <p className="text-gray-600 dark:text-gray-300">Rio de Janeiro, Brazil</p>
           </div>
 
-          <div className="bg-gray-700 p-6 rounded-lg">
+          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
             <div className="flex items-center space-x-3 mb-4">
               <Linkedin className="text-blue-400" size={24} />
-              <h3 className="text-xl font-semibold">{text.social}</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{text.social}</h3>
             </div>
             <div className="flex space-x-4">
               <a
                 href="https://www.linkedin.com/in/matheusbnas/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-blue-400 transition-colors"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-400 transition-colors"
               >
                 <Linkedin size={24} />
               </a>
@@ -96,13 +95,13 @@ export default function Contact({ language }) {
                 href="https://github.com/matheusbnas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-blue-400 transition-colors"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-400 transition-colors"
               >
                 <Github size={24} />
               </a>
               <a
                 href="mailto:matheusbnas@gmail.com"
-                className="text-gray-300 hover:text-blue-400 transition-colors"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-400 transition-colors"
                 onClick={(e) => {
                   window.location.href = "mailto:matheusbnas@gmail.com";
                   e.preventDefault();
