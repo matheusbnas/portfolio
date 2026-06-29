@@ -80,7 +80,7 @@ export default function Resume({ language }: ResumeProps) {
           location: "Rio de Janeiro",
           description: [
             "Desenvolvimento de modelos de Deep Learning (autoencoders, IA Generativa) com TensorFlow, aumentando a precisão preditiva em 30%",
-            "Engenharia de ML: Produtização de modelos em Azure, incluindo APIs REST (Flask) e monitoramento contínuo",
+            "Engenharia de ML: Produtização de modelos em GCP, incluindo APIs REST (Flask) e monitoramento contínuo",
             "Colaboração com áreas de negócio para identificar oportunidades de IA, traduzindo demandas em soluções técnicas",
             "Gestão estratégica e desenvolvimento de produtos de IA para clientes corporativos",
           ],
@@ -166,7 +166,7 @@ export default function Resume({ language }: ResumeProps) {
           location: "Rio de Janeiro, Brazil",
           description: [
             "Development of Deep Learning models (autoencoders, Generative AI) with TensorFlow, increasing predictive accuracy by 30%",
-            "ML Engineering: Model productization in Azure, including REST APIs (Flask) and continuous monitoring",
+            "ML Engineering: Model productization in GCP, including REST APIs (Flask) and continuous monitoring",
             "Collaboration with business areas to identify AI opportunities, translating demands into technical solutions",
             "Strategic management and development of AI products for corporate clients",
           ],

@@ -1,40 +1,39 @@
-import React from "react";
 import { Github } from "lucide-react";
 
 export default function About({ language }) {
   const content = {
     pt: {
       description:
-        "Olá, meu nome é Matheus Bernardes. Sou Cientista de Dados com experiência em projetos end-to-end de Machine Learning e IA. Formado em Sistemas de Computação pela UFF e MBA em Business Intelligence/AI na PUC-Rio. Combino expertise técnica em Python, TensorFlow e Azure com visão estratégica em BI, atuando na produtização de modelos escaláveis e desenvolvimento de soluções orientadas a dados para negócios.",
+        "Olá, meu nome é Matheus Bernardes. Sou Cientista de Dados com experiência em projetos end-to-end de Machine Learning e IA, atuando com grandes volumes de dados estruturados e não estruturados. Formado em Sistemas de Computação pela UFF e MBA em Business Intelligence/AI na PUC-Rio. Combino expertise em Python, SQL e pipelines em GCP com IA Generativa, agentes e multiagentes para automação de processos, análise de dados e qualidade dos dados para stakeholders — sempre com foco em resultados de negócio.",
 
       title: "Sobre Mim",
       whatIDo: "O que eu faço",
-      dataScience: "Ciência de Dados",
+      dataScience: "Ciência de Dados & IA",
       dataScienceDesc:
-        "Desenvolvo modelos de Deep Learning e IA Generativa, aumentando a precisão preditiva e otimizando processos de negócio.",
+        "Desenvolvo soluções de IA Generativa, agentes e multiagentes para automação, descoberta de insights e suporte à tomada de decisão, aliando modelos de linguagem a sistemas de busca semântica.",
       dataEngineering: "Engenharia de Dados",
       dataEngineeringDesc:
-        "Construo pipelines de dados robustos com ETL, APIs REST e monitoramento contínuo em ambiente cloud.",
+        "Construo pipelines de dados com Prefect e GCP para grandes volumes, orquestrando ETL, APIs REST e bancos de dados com foco em qualidade, governança e processamento em escala.",
       businessIntelligence: "Business Intelligence",
       businessIntelligenceDesc:
-        "Crio dashboards e visualizações interativas para métricas de negócio em tempo real usando Power BI e ferramentas modernas.",
+        "Transformo dados em decisão: dashboards interativos com Power BI e Pentaho, além de relatórios analíticos e apresentações executivas para comunicar resultados à liderança.",
       githubStats: "Estatísticas do GitHub",
       viewProfile: "Ver Perfil",
     },
     en: {
       title: "About Me",
       description:
-        "Hello, I'm Matheus Bernardes. I'm a Data Scientist with experience in end-to-end Machine Learning and AI projects. Graduated in Computer Systems from UFF and MBA in Business Intelligence/AI at PUC-Rio. I combine technical expertise in Python, TensorFlow, and Azure with strategic vision in BI, working on scalable model productization and data-driven business solutions.",
+        "Hello, I'm Matheus Bernardes. I'm a Data Scientist with experience in end-to-end Machine Learning and AI projects, working with large volumes of structured and unstructured data. Graduated in Computer Systems from UFF and MBA in Business Intelligence/AI at PUC-Rio. I combine expertise in Python, SQL and GCP pipelines with Generative AI, agents and multi-agents for process automation, data analysis and data quality — always focused on business outcomes.",
       whatIDo: "What I Do",
-      dataScience: "Data Science",
+      dataScience: "Data Science & AI",
       dataScienceDesc:
-        "I develop Deep Learning and Generative AI models, increasing predictive accuracy and optimizing business processes.",
+        "I develop Generative AI, agent and multi-agent solutions for automation, insight discovery and decision support, combining language models with semantic search systems.",
       dataEngineering: "Data Engineering",
       dataEngineeringDesc:
-        "I build robust data pipelines with ETL, REST APIs, and continuous monitoring in cloud environments.",
+        "I build data pipelines with Prefect and GCP for large-scale data, orchestrating ETL, REST APIs and databases with focus on quality, governance and scalable processing.",
       businessIntelligence: "Business Intelligence",
       businessIntelligenceDesc:
-        "I create interactive dashboards and visualizations for real-time business metrics using Power BI and modern tools.",
+        "I turn data into decisions: interactive dashboards with Power BI and Pentaho, plus analytical reports and executive presentations to communicate results to leadership.",
       githubStats: "GitHub Stats",
       viewProfile: "View Profile",
     },

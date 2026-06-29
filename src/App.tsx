@@ -1,17 +1,18 @@
-import React, { useState } from "react";
-import { Menu } from "lucide-react";
+import { useState } from "react";
+import { Sun, Moon, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import About from "./components/About";
 import Resume from "./components/Resume";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Blog from "./components/Blog";
-import Footer from "./components/footer.tsx";
+import Footer from "./components/Footer";
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [activeSection, setActiveSection] = useState("about");
-  const [language, setLanguage] = useState("pt");
+  const [language, setLanguage] = useState<"pt" | "en">("pt");
+  const [theme, setTheme] = useState("dark");
 
   const menuItems = [
     { id: "about", label: { pt: "Sobre", en: "About" } },
@@ -41,36 +42,77 @@ function App() {
     }
   };
 
+  const isLight = theme === "light";
+
+  const toggleTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    document.documentElement.setAttribute("data-theme", next);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      {/* Mobile Menu Button */}
-      <button
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        className="md:hidden fixed top-4 left-4 z-50 p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
-        aria-label="Toggle menu"
-      >
-        <Menu size={24} />
-      </button>
+    <div
+      className={`min-h-screen transition-colors duration-300 ${
+        isLight ? "bg-gray-50 text-gray-900" : "bg-gray-900 text-white"
+      }`}
+    >
+      {/* Floating toggle button when sidebar is closed */}
+      {!isSidebarOpen && (
+        <button
+          onClick={() => setIsSidebarOpen(true)}
+          className={`fixed top-4 left-4 z-50 p-2.5 rounded-xl shadow-lg transition-all hover:scale-105 ${
+            isLight
+              ? "bg-white text-gray-600 hover:text-gray-900"
+              : "bg-gray-800 text-gray-400 hover:text-white"
+          }`}
+          aria-label="Open sidebar"
+        >
+          <PanelLeftOpen size={20} />
+        </button>
+      )}
+
+      {/* Overlay for mobile */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-40 z-30 md:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
 
       {/* Sidebar */}
       <div
-        className={`
-        fixed top-0 left-0 h-full w-64 bg-gray-800 transform transition-transform duration-300 ease-in-out z-40
-        ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
-        md:translate-x-0
-      `}
+        className={`fixed top-0 left-0 h-full w-80 transform transition-transform duration-300 ease-in-out z-40 overflow-y-auto ${
+          isLight ? "bg-white shadow-2xl" : "bg-gray-800"
+        } ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
+        {/* Close button inside sidebar */}
+        <button
+          onClick={() => setIsSidebarOpen(false)}
+          className={`absolute top-3 right-3 z-50 p-1.5 rounded-lg transition-colors ${
+            isLight
+              ? "text-gray-400 hover:text-gray-700 hover:bg-gray-100"
+              : "text-gray-500 hover:text-gray-200 hover:bg-gray-700"
+          }`}
+          aria-label="Close sidebar"
+        >
+          <PanelLeftClose size={18} />
+        </button>
+
         <div className="p-6">
           <div className="flex flex-col items-center mb-8">
-            <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
+            <div className="w-32 h-32 rounded-full overflow-hidden mb-4 ring-2 ring-blue-500">
               <img
                 src="/images/foto_perfil.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
             </div>
-            <h1 className="text-xl font-bold">Matheus Bernardes</h1>
-            <p className="text-gray-400">Data Science | Machine Learning</p>
+            <h1 className={`text-xl font-bold ${isLight ? "text-gray-900" : "text-white"}`}>
+              Matheus Bernardes
+            </h1>
+            <p className={`${isLight ? "text-gray-500" : "text-gray-400"}`}>
+              Data Science | Machine Learning
+            </p>
           </div>
 
           <nav>
@@ -80,16 +122,14 @@ function App() {
                   <button
                     onClick={() => {
                       setActiveSection(item.id);
-                      setIsSidebarOpen(false);
                     }}
-                    className={`
-                      w-full px-4 py-2 rounded-lg text-left transition-colors
-                      ${
-                        activeSection === item.id
-                          ? "bg-blue-600 text-white"
-                          : "hover:bg-gray-700 text-gray-300"
-                      }
-                    `}
+                    className={`w-full px-4 py-3 rounded-lg text-left transition-colors text-base font-medium ${
+                      activeSection === item.id
+                        ? "bg-blue-600 text-white"
+                        : isLight
+                          ? "text-gray-700 hover:bg-gray-100"
+                          : "text-gray-300 hover:bg-gray-700"
+                    }`}
                   >
                     {item.label[language]}
                   </button>
@@ -98,12 +138,35 @@ function App() {
             </ul>
           </nav>
 
-          <div className="mt-8">
+          <div className="mt-8 space-y-3">
             <button
               onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
-              className="w-full px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors text-gray-300"
+              className={`w-full px-4 py-2 rounded-lg transition-colors ${
+                isLight
+                  ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+              }`}
             >
-              {language === "pt" ? "EN" : "PT"}
+              {language === "pt" ? "🇺🇸 English" : "🇧🇷 Português"}
+            </button>
+
+            <button
+              onClick={toggleTheme}
+              className={`w-full px-4 py-2 rounded-lg transition-colors flex items-center justify-center gap-2 ${
+                isLight
+                  ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+              }`}
+            >
+              {isLight ? (
+                <>
+                  <Moon size={18} /> Modo Escuro
+                </>
+              ) : (
+                <>
+                  <Sun size={18} /> Modo Claro
+                </>
+              )}
             </button>
           </div>
         </div>
@@ -111,15 +174,18 @@ function App() {
 
       {/* Main Content */}
       <main
-        className={`
-        transition-all duration-300 ease-in-out
-        md:ml-64 p-6
-      `}
+        className={`transition-all duration-300 ease-in-out p-6 ${
+          isSidebarOpen ? "md:ml-80" : "ml-0"
+        }`}
       >
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gray-800 rounded-lg p-6 shadow-xl">
+        <div className="max-w-4xl mx-auto pt-12">
+          <div
+            className={`rounded-lg p-6 shadow-xl ${
+              isLight ? "bg-white" : "bg-gray-800"
+            }`}
+          >
             {renderContent()}
-            <Footer language={language} />
+            <Footer language={language} theme={theme} />
           </div>
         </div>
       </main>
