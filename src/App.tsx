@@ -64,7 +64,7 @@ function App() {
           <div className="flex flex-col items-center mb-8">
             <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
               <img
-                src="images/foto_perfil.jpg"
+                src="/images/foto_perfil.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
